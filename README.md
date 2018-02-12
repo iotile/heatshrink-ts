@@ -2,7 +2,7 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/iotile/heatshrink-ts.svg)](https://greenkeeper.io/)
 [![Travis](https://img.shields.io/travis/iotile/heatshrink-ts.svg)](https://travis-ci.org/alexjoverm/typescript-library-starter)
-[![Coveralls](https://img.shields.io/coveralls/iotile/heatshrink-ts.svg)](https://coveralls.io/github/alexjoverm/typescript-library-starter)
+[![Coverage Status](https://coveralls.io/repos/github/iotile/heatshrink-ts/badge.svg?branch=master)](https://coveralls.io/github/iotile/heatshrink-ts?branch=master)
 
 ### Introduction
 
