@@ -36,7 +36,7 @@ let encodedInput = new Uint8Array([0xba, 0x5a, 0x2d, 0x37, 0x39, 0x00, 0x08, 0xa
 let decoder = new HeatshrinkDecoder(WINDOW_BITS, LOOKAHEAD_BITS, INPUT_BUFFER_LENGTH);
 decoder.process(encodedInput);
 
-let output = decoder.getOutput()
+let output = decoder.getOutput();
 
 // This will print 'Decoded output: this is a test'
 let outputString = String.fromCharCode(...output);
