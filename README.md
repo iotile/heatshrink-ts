@@ -65,4 +65,4 @@ non-embedded context.
 
 ### API Documentation
 
-INCLUDE A LINK TO THE GITHUB PAGES
+API Documentation can be found at: https://iotile.github.io/heatshrink-ts/
