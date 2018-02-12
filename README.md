@@ -1,6 +1,5 @@
 # Typescript Decoder for Heatshrink
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/iotile/heatshrink-ts.svg)](https://greenkeeper.io/)
 [![Travis](https://img.shields.io/travis/iotile/heatshrink-ts.svg)](https://travis-ci.org/iotile/heatshrink-ts)
 [![Coverage Status](https://coveralls.io/repos/github/iotile/heatshrink-ts/badge.svg?branch=master)](https://coveralls.io/github/iotile/heatshrink-ts?branch=master)
 
