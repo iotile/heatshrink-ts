@@ -9,10 +9,10 @@ export enum HSState {
 }
 
 export interface HSBitstreamState {
-    size: number
-    index: number
-    currentByte: number
-    bitIndex: number
+    size: number;
+    index: number;
+    currentByte: number;
+    bitIndex: number;
 }
 
 /**
@@ -36,11 +36,11 @@ export class HSInternalError extends HSError {}
 
 export class HSCorruptDataError extends HSError {}
 
-export const HS_MIN_WINDOW_BITS: number = 4
-export const HS_MAX_WINDOW_BITS: number = 15
-export const HS_MIN_LOOKAHEAD_BITS: number = 3
+export const HS_MIN_WINDOW_BITS: number = 4;
+export const HS_MAX_WINDOW_BITS: number = 15;
+export const HS_MIN_LOOKAHEAD_BITS: number = 3;
 
-export const HS_LITERAL_MARKER: number = 0x01
-export const HS_BACKREF_MARKER: number = 0x00
+export const HS_LITERAL_MARKER: number = 0x01;
+export const HS_BACKREF_MARKER: number = 0x00;
 
-export const HS_NOBITS: number = -1
+export const HS_NOBITS: number = -1;

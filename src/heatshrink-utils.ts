@@ -8,7 +8,7 @@
  * they externally visible.
  */
 
-import { HSBitstreamState, HSInternalError, HS_NOBITS } from './heatshrink-basic'
+import { HSBitstreamState, HSInternalError, HS_NOBITS } from "./heatshrink-basic";
 
 /**
  * Get a specific number of bits from the input buffer.  You can get between
@@ -32,7 +32,7 @@ export function getBits(count: number, buffer: Uint8Array, state: HSBitstreamSta
     if (count > 15) {
         throw new HSInternalError(
             `getBits called with invalid number of bits requested (${count} not in [1, 15])`
-        )
+        );
     }
 
     /*
@@ -43,41 +43,41 @@ export function getBits(count: number, buffer: Uint8Array, state: HSBitstreamSta
      *    so that when we move to the next byte 
      */
     if (state.size === 0 && state.bitIndex < 1 << (count - 1)) {
-        return HS_NOBITS
+        return HS_NOBITS;
     } else if (state.size - state.index === 1 && count > 8) {
-        let requiredBitmask = 1 << (count - 8 - 1)
+        let requiredBitmask = 1 << (count - 8 - 1);
         if (state.bitIndex < requiredBitmask) {
-            return HS_NOBITS
+            return HS_NOBITS;
         }
     }
 
-    let accum: number = 0
+    let accum: number = 0;
 
     for (let i = 0; i < count; ++i) {
         if (state.bitIndex === 0 && state.size === 0) {
-            return HS_NOBITS
+            return HS_NOBITS;
         }
 
         if (state.bitIndex === 0) {
-            state.currentByte = buffer[state.index]
-            state.index += 1
+            state.currentByte = buffer[state.index];
+            state.index += 1;
 
             // Keep track of when the inputBuffer is used up and mark it as empty again
             if (state.index === state.size) {
-                state.index = 0
-                state.size = 0
+                state.index = 0;
+                state.size = 0;
             }
 
-            state.bitIndex = 1 << 7
+            state.bitIndex = 1 << 7;
         }
 
-        accum <<= 1
+        accum <<= 1;
         if (state.currentByte & state.bitIndex) {
-            accum |= 1
+            accum |= 1;
         }
 
-        state.bitIndex >>= 1
+        state.bitIndex >>= 1;
     }
 
-    return accum
+    return accum;
 }
