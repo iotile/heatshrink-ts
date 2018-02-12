@@ -1,8 +1,4 @@
 language: node_js
-branches:
-  only:
-  - master
-  - /^greenkeeper/.*$/
 cache:
   yarn: true
   directories:
@@ -28,4 +24,3 @@ deploy:
   on:
     tags: true
     branch: master
-    repo: iotile/heatshrink-ts

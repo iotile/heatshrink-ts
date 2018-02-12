@@ -2,6 +2,7 @@
 
 [![Travis](https://img.shields.io/travis/iotile/heatshrink-ts.svg)](https://travis-ci.org/iotile/heatshrink-ts)
 [![Coverage Status](https://coveralls.io/repos/github/iotile/heatshrink-ts/badge.svg?branch=master)](https://coveralls.io/github/iotile/heatshrink-ts?branch=master)
+[![GitHub license](https://img.shields.io/github/license/iotile/heatshrink-ts.svg)](https://github.com/iotile/heatshrink-ts/blob/master/LICENSE)
 
 ### Introduction
 
