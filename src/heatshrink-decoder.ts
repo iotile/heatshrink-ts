@@ -176,6 +176,27 @@ export class HeatshrinkDecoder {
         return this.inputState.size === 0;
     }
 
+    /**
+     * Get all output data and truncate the output buffer.
+     * 
+     * Calling this function repeatedly will have the effect of
+     * pulling the output in chunks from the HeatshrinkDecoder.
+     * It will return all data currently available and remove it
+     * from the output buffer so another call to getOutput() will
+     * not return duplicate data.
+     * 
+     * @returns All data currently in the output buffer.
+     */
+    public getOutput(): Uint8Array {
+        let size = this.outputSize;
+        let output = this.outputBuffer.slice(0, size);
+
+        this.outputBuffer = this.outputBuffer.slice(size);
+        this.outputSize = 0;
+
+        return output;
+    }
+
     private assureUint8Array(buffer: Uint8Array | ArrayBuffer): Uint8Array {
         if (buffer instanceof ArrayBuffer) {
             return new Uint8Array(buffer);
