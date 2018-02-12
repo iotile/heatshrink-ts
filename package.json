@@ -12,7 +12,7 @@
   "author": "Tim Burke <tim@arch-iot.com>",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/iotile/heatshrink-ts.git"
   },
   "license": "ISC",
   "engines": {
