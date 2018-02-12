@@ -67,10 +67,10 @@ non-embedded context.
 
 ### Next Steps
 
-See [example usage](https://runkit.com/timburke/runkit-npm-heatshrink-ts-example-1) run
+- See [example usage](https://runkit.com/timburke/runkit-npm-heatshrink-ts-example-1) run
 immediately on Runkit.
 
-[Try out the libary](https://npm.runkit.com/heatshrink-ts) yourself on Runkit.
+- [Try out the libary](https://npm.runkit.com/heatshrink-ts) yourself on Runkit.
 
 ### API Documentation
 
