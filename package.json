@@ -1,7 +1,7 @@
 {
   "name": "heatshrink-ts",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "A typescript implementation of the heatshrink compression library",
   "keywords": [],
   "main": "dist/heatshrink-ts.umd.js",
   "module": "dist/heatshrink-ts.es5.js",

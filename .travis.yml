@@ -18,9 +18,11 @@ after_success:
 - npm run deploy-docs
 deploy:
   provider: npm
+  skip_cleanup: true
   email: tim@arch-iot.com
   api_key:
     secure: Lu9Z3KCO7Goz7JHQZ79MNYiBQjvAzYAWpDBDiPGJrRflwh1QTOtd4hKu+cU1XSuI6rR2rBFbobzE/4jnCVoPdXPWHBFMJEjwtBWWI0QM3k/Uo3wPdSysCqMHGV8HWqrFeymibb71LMl+7GCkWcygDRqpR1+2SWHiBS6V6ii9syP2dq3lOJ/3VKFdUtimdbNMiIZoDeBCXqLfFDexLf0OR6OAK3rWd9SpiGNVgRoYmCxtaOSWgBAgPo8KsEqmuY/UwegiBSckTWKdRK22Ra4tdrG42vR7+RuKXi/xAC7AleTwHPkM2/sK+yI4JaMdiea3N5IoHOAMZQecMyCciaR7buusm7AReG0PopYPmxsLCf4RlkyEmdUO6pIJ7oRd0rcFL+vmYQEbvJDiYRJbjEAn76DeZBmjCyvYSZ1bsqEVju4ZqtoBekp38wTNArQ3cbm6m4RXeKHWIcNtnsrkF4/nmiZoo90+Cdbu24QJ7fSQ9+TmK9DF25KsNfC50nYipZ/ly96FfpapnIYm3V3eP+y7n5im/GnwQpYy2TXVFtx+cV/hWf4v6JacskYXbyz6G0H/2/B6crTvr5j7ZPz2MnWnX71YVvadCQU3JFrxSJzWQSodtfKF4AQRV4OiaH1T1jcfAho7CtiEFrsIjsfClK9P3GcBepMnpdrVFSRWpFlQw2M=
   on:
     tags: true
+    branch: master
     repo: iotile/heatshrink-ts
