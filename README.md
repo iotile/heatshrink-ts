@@ -65,6 +65,13 @@ a little more time efficient.  64 bytes is a reasonable value.  This parameter
 will probably go away in the future since it is not so meaningful in a
 non-embedded context.
 
+### Next Steps
+
+See [example usage](https://runkit.com/timburke/runkit-npm-heatshrink-ts-example-1) run
+immediately on Runkit.
+
+[Try out the libary](https://npm.runkit.com/heatshrink-ts) yourself on Runkit.
+
 ### API Documentation
 
 API Documentation can be found at: https://iotile.github.io/heatshrink-ts/
