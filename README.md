@@ -35,8 +35,8 @@ const INPUT_BUFFER_LENGTH = 64;
 
 // Heatshrink Encoded form of the ASCII string 'this is a test'
 let encodedInput = new Uint8Array([0xba, 0x5a, 0x2d, 0x37, 0x39, 0x00, 0x08, 0xac, 0x32, 0x0b, 0xa5, 0x96, 0xe7, 0x74]);
-let decoder = new HeatshrinkDecoder(WINDOW_BITS, LOOKAHEAD_BITS, INPUT_BUFFER_LENGTH);
 
+let decoder = new HeatshrinkDecoder(WINDOW_BITS, LOOKAHEAD_BITS, INPUT_BUFFER_LENGTH);
 decoder.process(encodedInput);
 
 // This will print 'Decoded output: this is a test'
@@ -66,8 +66,6 @@ a little more time efficient.  64 bytes is a reasonable value.  This parameter
 will probably go away in the future since it is not so meaningful in a
 non-embedded context.
 
-### Documentation
+### API Documentation
 
 INCLUDE A LINK TO THE GITHUB PAGES
-
-
