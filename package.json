@@ -14,7 +14,7 @@
     "type": "git",
     "url": ""
   },
-  "license": "MIT",
+  "license": "ISC",
   "engines": {
     "node": ">=6.0.0"
   },
@@ -28,9 +28,7 @@
     "test:prod": "npm run lint && npm run test -- --coverage --no-cache",
     "deploy-docs": "ts-node tools/gh-pages-publish",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
-    "commit": "git-cz",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
+    "commit": "git-cz"
   },
   "config": {
     "commitizen": {

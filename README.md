@@ -19,7 +19,7 @@ a device using the heatshrink library.  It is written in typescript and distribu
 
 ### Installation and Basic Usage
 
-```
+```shell
 npm install heatshrink-ts
 ```
 
@@ -29,36 +29,13 @@ The primary class is the `HeatshrinkDecoder` object that can take in compressed 
 
 import { HeatshrinkDecoder } from "heatshrink-ts";
 
-/**
- * There are 2 key parameters that need to match between the encoder and decoder:
- *  - The window size (WINDOW_BITS), which is a number between 4 and 15, inclusive
- *    that sets how large of a sliding window is used to look for repeated strings.
- *    It is internally considered as a power of 2, so the value 8 would be 2**8 or
- *    256 bytes for the sliding window.
- * 
- *  - The lookahead size (LOOKAHEAD_BITS), which is a number between 2 and 15, always
- *    strictly smaller than the window size.  This sets how long of a repeated pattern
- *    the encoder can see and therefore compress.  According to the heatshrink
- *    documentation, a good size is WINDOW_BITS / 2.
- *  
- * N.B. Neither of these two parameters are transferred with heatshrink compressed
- * data but they are required to decode it properly.  You must magically know the
- * right values for the encoder that was used to produce your encoded data or the
- * decoding process will not produce the correct output.
- * 
- * The input buffer length can be whatever you want but a larger input buffer is
- * a little more time efficient.  64 bytes is a reasonable value.  This parameter
- * will probably go away in the future since it is not so meaningful in a
- * non-embedded context.
- */
-
 const WINDOW_BITS = 8;
 const LOOKAHEAD_BITS = 4;
 const INPUT_BUFFER_LENGTH = 64;
 
 // Heatshrink Encoded form of the ASCII string 'this is a test'
 let encodedInput = new Uint8Array([0xba, 0x5a, 0x2d, 0x37, 0x39, 0x00, 0x08, 0xac, 0x32, 0x0b, 0xa5, 0x96, 0xe7, 0x74]);
-let decoder = HeatshrinkDecoder(WINDOW_BITS, LOOKAHEAD_BITS, INPUT_BUFFER_LENGTH);
+let decoder = new HeatshrinkDecoder(WINDOW_BITS, LOOKAHEAD_BITS, INPUT_BUFFER_LENGTH);
 
 let output = decoder.process(encodedInput);
 let outputString = String.fromCharCode(...output);
@@ -66,6 +43,28 @@ let outputString = String.fromCharCode(...output);
 // This will print 'Decoded output: this is a test'
 console.log("Decoded output: " + outputString);
 ```
+
+There are 2 key parameters that need to match between the encoder and decoder:
+
+ - The window size (WINDOW_BITS), which is a number between 4 and 15, inclusive
+   that sets how large of a sliding window is used to look for repeated strings.
+   It is internally considered as a power of 2, so the value 8 would be 2**8 or
+   256 bytes for the sliding window.
+ 
+ - The lookahead size (LOOKAHEAD_BITS), which is a number between 2 and 15, always
+   strictly smaller than the window size.  This sets how long of a repeated pattern
+   the encoder can see and therefore compress.  According to the heatshrink
+   documentation, a good size is WINDOW_BITS / 2.
+ 
+**Important:** Neither of these two parameters are transferred with heatshrink compressed
+data but they are required to decode it properly.  You must magically know the
+right values for the encoder that was used to produce your encoded data or the
+decoding process will not produce the correct output.
+
+The input buffer length can be whatever you want but a larger input buffer is
+a little more time efficient.  64 bytes is a reasonable value.  This parameter
+will probably go away in the future since it is not so meaningful in a
+non-embedded context.
 
 ### Documentation
 
